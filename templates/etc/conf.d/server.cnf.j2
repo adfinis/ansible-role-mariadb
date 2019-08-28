@@ -85,6 +85,11 @@ replicate-wild-do-table = {{ mariadb_replicate_wild_do_table }}
 #
 # InnoDB is enabled by default with a 10MB datafile in /var/lib/mysql/.
 # Read the manual for more InnoDB related options. There are many!
+{% if mariadb_innodb_file_per_table | d(False) %}
+# Use a separate InnoDB tablespace (the ibdata stuff in /var/lib/mysql)
+# for each table. (Default since MariaDB >= 5.5)
+innodb_file_per_table=1
+{% endif %}
 
 #
 # * Security Features
