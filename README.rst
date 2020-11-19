@@ -11,15 +11,14 @@ ROLE MARIADB
 .. image:: https://img.shields.io/badge/galaxy-adfinis--sygroup.mariadb-660198.svg?style=flat-square
   :target: https://galaxy.ansible.com/adfinis-sygroup/mariadb
 
-A brief description of the role goes here.
+This role allows you to configure MariaDB server including databases, users and
+SSL certificates.
 
 
 Requirements
 =============
 
-Any pre-requisites that may not be covered by Ansible itself or the role
-should be mentioned here. For instance, if the role uses the EC2 module, it
-may be a good idea to mention in this section that the boto package is required.
+None
 
 
 Role Variables
@@ -43,8 +42,7 @@ that are used from other roles.
 Example Playbook
 =================
 
-Including an example of how to use your role (for instance, with variables
-passed in as parameters) is always nice for users too:
+You can include the role in your Ansible playbooks like any other role:
 
 .. code-block:: yaml
 
@@ -64,5 +62,5 @@ Author Information
 
 mariadb role was written by:
 
-* Adfinis SyGroup AG | `Website <https://www.adfinis-sygroup.ch/>`_ | `Twitter <https://twitter.com/adfinissygroup>`_ | `GitHub <https://github.com/adfinis-sygroup>`_
+* Adfinis AG | `Website <https://adfinis.com/>`_ | `Twitter <https://twitter.com/adfinis>`_ | `GitHub <https://github.com/adfinis-sygroup>`_
 
