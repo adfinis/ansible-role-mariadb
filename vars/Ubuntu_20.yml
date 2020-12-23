@@ -1,0 +1,60 @@
+---
+# mariadb related packages
+mariadb_packages:
+  - mariadb-server
+  - mariadb-client
+  - python3-mysqldb
+  - pwgen
+  - python-openssl
+
+# mariadb service name
+mariadb_service: mariadb
+
+# mariadb user
+mariadb_user: mysql
+
+# mariadb server binary
+mariadb_server_bin: /usr/sbin/mysqld
+
+# global mariadb configuration file location
+mariadb_conf: /etc/mysql/mariadb.cnf
+
+# global mariadb configuration directory
+mariadb_conf_dir: /etc/mysql/conf.d
+
+# mariadb configuration files
+mariadb_conf_files:
+  - client
+  - server
+  - mysqld_safe
+  - mysqldump
+
+# configuration directories and files to remove
+mariadb_conf_remove:
+  - /etc/mysql/mariadb.conf.d
+  - /etc/mysql/my.cnf
+  - /etc/mysql/conf.d/mysql.cnf
+
+# roots my.cnf
+mariadb_root_mycnf: /root/.my.cnf
+
+# mariadb slow log file
+mariadb_log_slow: /var/log/mysql/mysql-slow.log
+
+# mariadb error log file
+mariadb_log_error: /var/log/mysql/error.log
+
+# mariadb run directory
+mariadb_run_dir: /var/run/mysqld
+
+# mariadb socket file
+mariadb_socket: "{{ mariadb_run_dir }}/mysqld.sock"
+
+# mariadb anonymous users
+mariadb_anon_user_hosts: []
+
+# mariadb pki path
+mariadb_pki_path: /etc/mysql
+
+# MariaDB default character set.
+mariadb_character_set_default: utf8mb4
