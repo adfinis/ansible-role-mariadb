@@ -23,8 +23,8 @@ bind-address            = {{ mariadb_bind_address }}
 #
 # * Fine Tuning
 #
-key_buffer              = 16M
-max_allowed_packet      = 16M
+key_buffer              = {{ mariadb_key_buffer_size }}
+max_allowed_packet      = {{ mariadb_max_allowed_packet }}
 thread_stack            = 192K
 thread_cache_size       = 8
 # This replaces the startup script and checks MyISAM tables if needed
@@ -37,8 +37,8 @@ myisam-recover          = BACKUP
 #
 # * Query Cache Configuration
 #
-query_cache_limit       = 1M
-query_cache_size        = 16M
+query_cache_limit       = {{ mariadb_query_cache_limit }}
+query_cache_size        = {{ mariadb_query_cache_size }}
 
 #
 # * Logging and Replication
@@ -90,6 +90,28 @@ replicate-wild-do-table = {{ mariadb_replicate_wild_do_table }}
 # for each table. (Default since MariaDB >= 5.5)
 innodb_file_per_table=1
 {% endif %}
+{% if mariadb_innodb_buffer_pool_chunk_size is defined %}
+
+# Chunk size for InnoDB buffer pool resizing operations:
+innodb_buffer_pool_chunk_size = {{ mariadb_innodb_buffer_pool_chunk_size }}
+{% endif %}
+{% if mariadb_innodb_buffer_pool_instances is defined %}
+
+# Number of regions that the InnoDB buffer pool is divided into:
+innodb_buffer_pool_instances = {{ mariadb_innodb_buffer_pool_instances }}
+{% endif %}
+{% if mariadb_innodb_buffer_pool_size is defined %}
+
+# Size of the InnoDB buffer pool, where InnoDB caches table and index data (must
+# be a multiple of innodb_buffer_pool_chunk_size*innodb_buffer_pool_instances):
+innodb_buffer_pool_size = {{ mariadb_innodb_buffer_pool_size }}
+{% endif %}
+{% if mariadb_innodb_log_file_size is defined %}
+
+# Size of each log file in a log group:
+innodb_log_file_size    = {{ mariadb_innodb_log_file_size }}
+{% endif %}
+
 
 #
 # * Security Features
