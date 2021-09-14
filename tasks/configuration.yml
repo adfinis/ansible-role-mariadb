@@ -90,6 +90,7 @@
     priv: '{{ item.priv }}'
     login_unix_socket: '{{ mariadb_socket }}'
     state: present
+  no_log: yes
   when: item.name is defined and item.name and
         item.password is defined and item.password and
         item.priv is defined and item.priv
