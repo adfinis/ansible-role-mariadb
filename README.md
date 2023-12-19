@@ -1,9 +1,9 @@
 ROLE MARIADB
 =============
 
- [![License](https://img.shields.io/github/license/adfinis-sygroup/ansible-role-mariadb.svg?style=flat-square)](https://github.com/adfinis-sygroup/ansible-role-mariadb/blob/master/LICENSE)
- [![GitHub](https://img.shields.io/travis/adfinis-sygroup/ansible-role-mariadb.svg?style=flat-square)](https://github.com/adfinis-sygroup/ansible-role-mariadb)
- [![Galaxy](https://img.shields.io/badge/galaxy-adfinis--sygroup.mariadb-660198.svg?style=flat-square)](https://galaxy.ansible.com/adfinis-sygroup/mariadb)
+ [![License](https://img.shields.io/github/license/adfinis/ansible-role-mariadb.svg?style=flat-square)](https://github.com/adfinis/ansible-role-mariadb/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/github/actions/workflow/status/adfinis/ansible-role-mariadb/ansible-ci.yml?style=flat-square)](https://github.com/adfinis/ansible-role-mariadb/actions)
+ [![Galaxy](https://img.shields.io/badge/galaxy-adfinis.mariadb-660198.svg?style=flat-square)](https://galaxy.ansible.com/adfinis/mariadb)
 
 This role allows you to configure MariaDB server including databases, users and
 SSL certificates.
@@ -29,16 +29,16 @@ You can include the role in your Ansible playbooks like any other role:
 ```yaml
   - hosts: servers
     roles:
-       - adfinis-sygroup.mariadb
+       - adfinis.mariadb
 ```
 
 ## License
 
-[GPL-3.0](https://github.com/adfinis-sygroup/ansible-role-mariadb/blob/master/LICENSE)
+[GPL-3.0](https://github.com/adfinis/ansible-role-mariadb/blob/master/LICENSE)
 
 
 ## Author Information
 
 mariadb role was written by:
 
-* Adfinis AG [Website](https://adfinis.com/) | [Twitter](https://twitter.com/adfinis) | [GitHub](https://github.com/adfinis-sygroup)
+* Adfinis AG [Website](https://adfinis.com/) | [Twitter](https://twitter.com/adfinis) | [GitHub](https://github.com/adfinis)

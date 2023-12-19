@@ -1,25 +1,24 @@
 ---
-
-- name: mariadb check config and restart
-  shell: '{{ mariadb_server_bin }} --help --verbose --skip-networking 1>/dev/null'
+- name: Mariadb check config and restart
+  ansible.builtin.shell: "{{ mariadb_server_bin }} --help --verbose --skip-networking 1>/dev/null" # noqa: no-changed-when
   notify:
-    - 'mariadb restart daemon'
+    - mariadb restart daemon
 
-- name: mariadb restart daemon
-  service:
-    name: '{{ mariadb_service }}'
+- name: Mariadb restart daemon
+  ansible.builtin.service:
+    name: "{{ mariadb_service }}"
     state: restarted
 
-- name: mariadb remove anonymous users
-  mysql_user:
-    name: ''
-    host: '{{ item }}'
-    login_unix_socket: '{{ mariadb_socket }}'
+- name: Mariadb remove anonymous users
+  community.mysql.mysql_user:
+    name: ""
+    host: "{{ item }}"
+    login_unix_socket: "{{ mariadb_socket }}"
     state: absent
-  with_items: '{{ mariadb_anon_user_hosts }}'
+  with_items: "{{ mariadb_anon_user_hosts }}"
 
-- name: mariadb remove test database
-  mysql_db:
+- name: Mariadb remove test database
+  community.mysql.mysql_db:
     name: test
-    login_unix_socket: '{{ mariadb_socket }}'
+    login_unix_socket: "{{ mariadb_socket }}"
     state: absent

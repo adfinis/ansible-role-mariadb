@@ -1,28 +1,30 @@
 ---
-
-- name: include os specific vars
-  include_vars: '{{ item }}'
+- name: Include os specific vars
+  ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
-    - '{{ ansible_distribution }}_{{ ansible_distribution_major_version }}.yml'
-    - '{{ ansible_os_family }}.yml'
+    - "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_os_family }}.yml"
   tags:
-    - 'role::mariadb'
-    - 'role::mariadb:install'
-    - 'role::mariadb:config'
-    - 'role::mariadb:ssl'
+    - role::mariadb
+    - role::mariadb:install
+    - role::mariadb:config
+    - role::mariadb:ssl
 
-- import_tasks: installation.yml
+- name: Import installation tasks
+  ansible.builtin.import_tasks: installation.yml
   tags:
-    - 'role::mariadb'
-    - 'role::mariadb:install'
+    - role::mariadb
+    - role::mariadb:install
 
-- import_tasks: configuration.yml
+- name: Import configuration tasks
+  ansible.builtin.import_tasks: configuration.yml
   tags:
-    - 'role::mariadb'
-    - 'role::mariadb:config'
+    - role::mariadb
+    - role::mariadb:config
 
-- import_tasks: ssl.yml
+- name: Import SSL tasks
+  ansible.builtin.import_tasks: ssl.yml
   tags:
-    - 'role::mariadb'
-    - 'role::mariadb:ssl'
+    - role::mariadb
+    - role::mariadb:ssl
   when: mariadb_ssl

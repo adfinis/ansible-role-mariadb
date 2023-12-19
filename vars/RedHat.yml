@@ -43,12 +43,12 @@ mariadb_log_error: /var/log/mariadb/mariadb.err
 mariadb_run_dir: /var/run/mariadb
 
 # mariadb socket file
-mariadb_socket: '{{ mariadb_run_dir }}/mysqld.sock'
+mariadb_socket: "{{ mariadb_run_dir }}/mysqld.sock"
 
 # mariadb anonymous users
 mariadb_anon_user_hosts:
   - localhost
-  - '{{ ansible_fqdn }}'
+  - "{{ ansible_fqdn }}"
 
 # mariadb pki path
 mariadb_pki_path: /etc/pki/mariadb
