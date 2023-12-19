@@ -1,6 +1,8 @@
 ---
 
 dependencies: []
+collections:
+  - community.mysql
 galaxy_info:
   role_name: mariadb
   namespace: adfinis
