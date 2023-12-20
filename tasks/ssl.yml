@@ -63,7 +63,7 @@
   register: mariadb_register_csr
 
 - name: sign mariadb ssl certificate signing request
-  openssl_certificate:
+  community.crypto.x509_certificate:
     path: tmp/mariadb_{{ ansible_fqdn }}.pem
     privatekey_path: tmp/mariadb_ssl_ca.key
     csr_path: tmp/mariadb_{{ ansible_fqdn }}.csr
@@ -75,7 +75,7 @@
   when: mariadb_register_csr.changed
 
 - name: put the mariadb ssl certificate to the server
-  copy:
+  ansible.builtin.copy:
     src: tmp/mariadb_{{ ansible_fqdn }}.pem
     dest: "{{ mariadb_pki_path }}/server.pem"
     owner: root
