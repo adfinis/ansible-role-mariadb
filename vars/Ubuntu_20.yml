@@ -52,7 +52,6 @@ mariadb_socket: "{{ mariadb_run_dir }}/mysqld.sock"
 
 # mariadb anonymous users
 mariadb_anon_user_hosts: []
-
 # mariadb pki path
 mariadb_pki_path: /etc/mysql
 

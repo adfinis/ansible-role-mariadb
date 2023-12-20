@@ -43,11 +43,10 @@ mariadb_log_error: /var/log/mysql.log
 mariadb_run_dir: /var/run/mysqld
 
 # mariadb socket file
-mariadb_socket: '{{ mariadb_run_dir }}/mysqld.sock'
+mariadb_socket: "{{ mariadb_run_dir }}/mysqld.sock"
 
 # mariadb anonymous users
 mariadb_anon_user_hosts: []
-
 # mariadb pki path
 mariadb_pki_path: /etc/mysql
 

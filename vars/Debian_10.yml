@@ -39,10 +39,9 @@ mariadb_log_error: /var/log/mysql/error.log
 mariadb_run_dir: /var/run/mysqld
 
 # mariadb socket file
-mariadb_socket: '{{ mariadb_run_dir }}/mysqld.sock'
+mariadb_socket: "{{ mariadb_run_dir }}/mysqld.sock"
 
 # mariadb anonymous users
 mariadb_anon_user_hosts: []
-
 # MariaDB default character set.
 mariadb_character_set_default: utf8mb4

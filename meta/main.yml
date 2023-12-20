@@ -1,14 +1,17 @@
 ---
 
 dependencies: []
-
+collections:
+  - community.mysql
+  - community.crypto
 galaxy_info:
-  role_name: 'mariadb'
-  author: 'Adfinis SyGroup AG'
-  description: 'Install and manage mariadb/mysql server. pyOpenSSL is locally also required.'
-  company: 'Adfinis SyGroup AG'
-  license: 'GNU General Public License v3'
-  min_ansible_version: '2.3.0'
+  role_name: mariadb
+  namespace: adfinis
+  author: Adfinis AG
+  description: Install and manage mariadb/mysql server. pyOpenSSL is locally also required.
+  company: Adfinis AG
+  license: GNU General Public License v3
+  min_ansible_version: 2.3.0
   platforms:
     - name: Debian
       versions:
@@ -16,16 +19,20 @@ galaxy_info:
         - jessie
         - stretch
         - buster
+        - bullseye
+        - bookworm
     - name: Ubuntu
       versions:
         - trusty
         - xenial
+        - bionic
         - focal
+        - jammy
     - name: EL
       versions:
-        - 6
-        - 7
-        - 8
+        - "6"
+        - "7"
+        - "8"
   galaxy_tags:
     - mariadb
     - mysql
