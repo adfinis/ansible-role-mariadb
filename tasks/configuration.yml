@@ -11,7 +11,7 @@
     setype: mysqld_etc_t
     selevel: s0
   notify:
-    - mariadb check config and restart
+    - Mariadb check config and restart
 
 - name: Create mariadb component configurations
   ansible.builtin.template:
@@ -26,7 +26,7 @@
     selevel: s0
   with_items: "{{ mariadb_conf_files }}"
   notify:
-    - mariadb check config and restart
+    - Mariadb check config and restart
 
 - name: Enable mariadb service
   ansible.builtin.service:
