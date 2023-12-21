@@ -2,7 +2,7 @@
 - name: Mariadb check config and restart
   ansible.builtin.shell: "{{ mariadb_server_bin }} --help --verbose --skip-networking 1>/dev/null" # noqa: no-changed-when
   notify:
-    - mariadb restart daemon
+    - Mariadb restart daemon
 
 - name: Mariadb restart daemon
   ansible.builtin.service:

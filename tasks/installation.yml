@@ -4,9 +4,9 @@
     name: "{{ mariadb_packages }}"
     state: present
   notify:
-    - mariadb restart daemon
-    - mariadb remove anonymous users
-    - mariadb remove test database
+    - Mariadb restart daemon
+    - Mariadb remove anonymous users
+    - Mariadb remove test database
 
 - name: Create mariadb configuration directory
   ansible.builtin.file:
